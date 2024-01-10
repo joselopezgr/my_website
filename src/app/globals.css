@@ -1,27 +1,31 @@
+/* global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-dark-rgb: 127, 47, 15; /* Dark orange terracotta */
+  --background-medium-dark-rgb: 150, 75, 37; /* Medium-dark orange */
+  --background-medium-light-rgb: 200, 100, 50; /* Medium-light orange */
+  --background-light-rgb: 255, 200, 160; /* Light orange pastel */
+
+  --background-dark-green-rgb: 160, 200, 160; /* Dark green terracotta */
+  --background-medium-dark-green-rgb: 120, 180, 120; /* Medium-dark green */
+  --background-medium-light-green-rgb: 80, 160, 80; /* Medium-light green */
+  --background-light-green-rgb: 40, 140, 40; /* Light green pastel */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-dark-rgb: var(--background-dark-green-rgb);
+    --background-medium-dark-rgb: var(--background-medium-dark-green-rgb);
+    --background-medium-light-rgb: var(--background-medium-light-green-rgb);
+    --background-light-rgb: var(--background-light-green-rgb);
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
