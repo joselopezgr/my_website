@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,20 +19,17 @@ export default function RootLayout({
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [sidebarVisible, setSidebarVisible] = useState<boolean>(false);
 
   useEffect(() => {
     if (isLoading) return;
   }, [isLoading]);
 
-  const toggleSidebar = () => {
-    setSidebarVisible((prev) => !prev);
-  };
-
   return (
     <html lang="en">
       <head />
-      <body className={`bg-gradient-to-r from-orange-100 to-zinc-50 dark:bg-gradient-to-r dark:from-slate-800 dark:to-slate-600 ${inter.className}`}>
+      <body
+        className={`bg-gradient-to-r from-orange-100 to-zinc-50 dark:bg-gradient-to-r dark:from-slate-800 dark:to-slate-600 ${inter.className} overflow-auto`}
+      >
         <AnimatePresence mode="wait">
           {isLoading && isHome ? (
             // Wrap SplashScreen in motion.div to apply animations
@@ -51,14 +49,13 @@ export default function RootLayout({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="relative h-screen overflow-hidden"
+              className="relative h-screen overflow-visible"
             >
-              <div className="flex">
-                  <ThemeProvider enableSystem={true} attribute="class">
-                    <Navbar/>
-                    {children}
-                  </ThemeProvider>
-              </div>
+              <ThemeProvider enableSystem={true} attribute="class">
+                <Navbar />
+                {children}
+                <Footer/>
+              </ThemeProvider>
             </motion.div>
           )}
         </AnimatePresence>
