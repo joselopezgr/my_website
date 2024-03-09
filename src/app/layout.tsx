@@ -1,13 +1,12 @@
 "use client";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { SplashScreen } from "../components/SplashScreen";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ThemeProvider } from "next-themes";
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { SplashScreen } from "../components/SplashScreen";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,10 +25,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head />
       <body
-        className={`bg-gradient-to-r from-orange-100 to-zinc-50 dark:bg-gradient-to-r dark:from-slate-800 dark:to-slate-600 ${inter.className} overflow-auto`}
+        className={`root-body overflow-auto`}
       >
+        {" "}
         <AnimatePresence mode="wait">
           {isLoading && isHome ? (
             // Wrap SplashScreen in motion.div to apply animations
@@ -52,9 +51,8 @@ export default function RootLayout({
               className="relative h-screen overflow-visible"
             >
               <ThemeProvider enableSystem={true} attribute="class">
-                <Navbar />
                 {children}
-                <Footer/>
+                <Footer />
               </ThemeProvider>
             </motion.div>
           )}

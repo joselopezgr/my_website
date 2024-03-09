@@ -18,14 +18,13 @@ const ContactSection: FC = () => {
   }
 
   return (
-    <section id="contact">
-      <div className="my-12 pb-12 md:pt-16 md:pb-48">
-        <h1 className="text-center font-bold text-4xl">
-          Contact me
-          <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
+    <section id="contact" className="mx-auto max-w-6xl px-6">
+      <div className="my-12 pb-8 md:pt-16 md:pb-32">
+        <h1 className="text-left font-bold text-4xl pb-8">
+          &lt; Contact me <span style={{ color: "#d66853" }}>/</span>&gt;
         </h1>
 
-        <div className="flex justify-center items-center h-full mt-6 pt-4 border rounded-md">
+        <div className="contact-container flex justify-center items-center h-full mt-6 pt-8 pb-8">
           <form onSubmit={handleSubmit(onSubmit)} className="max-w-md w-full">
             <div className="mb-5">
               <label
@@ -37,7 +36,7 @@ const ContactSection: FC = () => {
               <input
                 type="text"
                 placeholder="Full Name"
-                className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+                className="w-full rounded-md border border-gray-300 bg-neutral-200 opacity-80 py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
                 {...register("name", { required: true })}
               />
             </div>
@@ -51,7 +50,7 @@ const ContactSection: FC = () => {
               <input
                 type="email"
                 placeholder="example@domain.com"
-                className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+                className="w-full rounded-md border border-gray-300 bg-neutral-200 py-3 opacity-80 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
                 {...register("email", { required: true })}
               />
             </div>
@@ -65,14 +64,12 @@ const ContactSection: FC = () => {
               <textarea
                 rows={4}
                 placeholder="Type your message"
-                className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+                className="w-full resize-none rounded-md border border-gray-300 bg-neutral-200 opacity-80 py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
                 {...register("message", { required: true })}
               ></textarea>
             </div>
             <div>
-              <button className="hover:shadow-form mb-4 rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none">
-                Submit
-              </button>
+              <button className="contact-button">Submit</button>
             </div>
           </form>
         </div>

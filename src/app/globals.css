@@ -1,4 +1,237 @@
 /* global.css */
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Cabin:wght@600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css */
+
+.my-name {
+    font-size: 4rem; /* default size */
+    line-height: 1; 
+    font-weight: 800;
+    color: #363636;
+    font-family: 'hiragino', sans-serif;
+    width: 100%; /* occupy 60% of the component */
+    text-align: left; /* position the name on the left */
+    overflow: hidden;
+    margin-top: 12rem; /* add margin on top */
+    margin-bottom: 10rem; /* add margin on bottom */
+    padding-top: 1rem; /* add padding on top */
+    padding-bottom: 1rem; /* add padding on bottom */
+}
+
+.char {
+    display: inline-block;
+    animation: slide-up 1s ease-in-out forwards;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* When the screen size is 768px or more, decrease the font size */
+@media screen and (min-width: 768px) {
+    .my-name {
+        font-size: 6rem;
+    }
+}
+
+/* When the screen size is 1024px or more, decrease the font size even more */
+@media screen and (min-width: 1024px) {
+    .my-name {
+        font-size: 10rem;
+    }
+}
+
+/* When the screen size is 1200px or more, decrease the font size even more */
+@media screen and (min-width: 1200px) {
+    .my-name {
+        font-size: 12rem;
+    }
+}
+
+@font-face {
+    font-family: 'hiragino';
+    src: url('/fonts/HiraginoSansGB-W6.ttf') format('truetype');
+}
+
+
+/* styles.css */
+.root-body { 
+    background-image: linear-gradient(180deg, #FFE5D4 3%, #f9c09b 70%);
+    border: 1px solid #FFFFFF;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+main { 
+    background-image: linear-gradient(180deg, #FFE5D4 3%, #f9c09b 70%);
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    min-height: 100vh; /* Ensure it takes at least full viewport height */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* take up the full height of its parent */
+}
+
+.my-name-wrapper {
+    flex: 4; /* take up 4/5 of the available space */
+}
+
+.first-button {
+    color: #f7fafc; /* text-neutral-100 */
+    font-weight: 600; /* font-semibold */
+    padding: 6px; /* px-6 */
+    padding-top: 3px; /* py-3 */
+    padding-bottom: 3px; /* py-3 */
+    background-color: #048a81; /* bg-teal-600 */
+    border-radius: 0.375rem; /* rounded-lg */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow */
+    transition-property: transform; /* transition-transform */
+    transition-duration: 0.3s; /* ease-out */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-out */
+}
+
+.first-button:hover {
+    transform: scale(0.95); /* hover:scale-95 */
+}    
+
+#about h1 {
+    color: #363636;
+    font-family: 'hiragino', sans-serif;
+}
+
+#about hr {
+    background-color: #d66853;
+}
+
+.about-container { 
+        background-color: rgba(214, 104, 83, 0.10);
+        border-radius: 5px;
+        color: #363636 ;
+}
+
+.tech-buttons {
+    background-color: #f7fafc; /* bg-gray-200 */
+    transition-duration: 0.3s; /* ease-in */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in */
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem; /* py-2 */
+    margin-right: 0.5rem; /* mr-2 */
+    margin-top: 0.5rem; /* mt-2 */
+    color: #718096; /* text-gray-500 */
+    border-radius: 0.375rem; /* rounded */
+    font-weight: 600; /* font-semibold */
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+}
+
+/*When I hover over the tech-buttons I want them to shrink and go this color #759aab */
+.tech-buttons:hover {
+    transform: scale(0.95); /* hover:scale-95 */
+    background-color: #759aab; /* hover:bg-gray-300 */
+    color: #2d3748; /* hover:text-gray-700 */
+}
+
+#projects h1 {
+    color: #363636;
+    font-family: 'hiragino', sans-serif;
+}
+
+.project-container  {
+    background-color: rgba(214, 155, 83, 0.22);
+    border-radius: 5px;
+    color: #363636 ;
+}
+
+#contact h1 {
+    color: #363636;
+    font-family: 'hiragino', sans-serif;
+}
+
+.contact-container {
+    background-color: rgba(214, 104, 83, 0.10);
+    border-radius: 5px;
+    color: #363636 ;
+    font-family: 'syne', sans-serif;
+}
+
+.contact-button:hover {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.contact-button {
+    margin-bottom: 1rem;
+    border-radius: 0.375rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #759aab;
+    color: #363636;
+    outline: none;
+    
+}
+
+footer {
+    color: #2d3748;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: 'hiragino', sans-serif;
+    border-top: 3px solid #ffe5d4; /* Add border style and width */
+    border-radius: 0.375rem; /* Add border radius */
+}
+
+.carousel .slide {
+    background: #f5f5f5; /* Light grey background for each slide */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow effect */
+  }
+  
+  .carousel .slide img {
+    border-radius: 10px; /* Rounded corners for images */
+  }
+  
+  .carousel .control-arrow:hover {
+    background: rgba(0, 0, 0, 0.2); /* Darker background when hovering over arrows */
+  }
+  
+  .carousel .thumbs-wrapper {
+    margin-top: 20px; /* Space between carousel and thumbnails */
+  }
+  
+  .carousel .thumb {
+    border: 2px solid #d66853; /* Border around thumbnails */
+  }
+  
+  .carousel .thumb.selected, .carousel .thumb:hover {
+    border: 2px solid #d66853; /* Border color when thumbnail is selected or on hover */
+  }
+
+.carousel .legend {
+    background: #759aab !important; 
+    color: #141414 !important; 
+    padding: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

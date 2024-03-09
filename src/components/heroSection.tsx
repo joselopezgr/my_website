@@ -1,58 +1,42 @@
 "use client"; // this is a client component
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Link } from "react-scroll/modules";
+import Link from "next/link";
 import { HiArrowDown } from "react-icons/hi";
 
 const HeroSection = () => {
+  const nameRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (nameRef.current) {
+      (nameRef.current as HTMLHeadingElement)
+        .querySelectorAll<HTMLSpanElement>(".char")
+        .forEach((el: HTMLSpanElement, i: number) => {
+          el.style.animationDelay = `${0.1 * i}s`;
+        });
+    }
+  }, []);
+
   return (
-    <section id="home">
-      <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left">
-        <div className="md:mt-2 md:w-1/2">
-          <Image
-            src="/myPicture.jpg"
-            alt="jose-snapshot"
-            width={325}
-            height={325}
-            className="rounded-full shadow-2xl"
-          />
-        </div>
-        <div className="md:mt-2 md:w-3/5">
-          <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-7xl">
-            Hey, I&#39;m José! 🙋🏻
-          </h1>
-          <p className="text-lg mt-4 mb-6 md:text-2xl">
-            I&#39;m a{" "}
-            <span className="font-semibold text-teal-600">
-              Software Engineer{" "}
-            </span>
-            based in Leeds, England. Working towards creating software that
-            makes life easier and more meaningful.
-          </p>
-          <Link
-            to="projects"
-            className="text-neutral-100 font-semibold px-6 py-3 bg-teal-600 rounded shadow hover:bg-teal-700"
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={500}
-          >
-            Projects
-          </Link>
-        </div>
-      </div>
-      <div className="flex flex-row items-center text-center justify-center ">
-        <Link
-          to="about"
-          activeClass="active"
-          spy={true}
-          smooth={true}
-          offset={-100}
-          duration={500}
-        >
-          <HiArrowDown size={35} className="animate-bounce" />
-        </Link>
+    <section id="home" className="container">
+      <div className="my-name-wrapper">
+        <h1 className="my-name" ref={nameRef}>
+          <span className="char">J</span>
+          <span className="char">o</span>
+          <span className="char">s</span>
+          <span className="char" style={{ color: "#d66853" }}>
+            é
+          </span>
+          <span className="char"> </span>
+          <br /> {/* Add this line */}
+          <span className="char">L</span>
+          <span className="char">o</span>
+          <span className="char">p</span>
+          <span className="char" style={{ color: "#d66853" }}>
+            e
+          </span>
+          <span className="char">z</span>
+        </h1>
       </div>
     </section>
   );
