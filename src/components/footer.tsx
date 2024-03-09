@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex flex-row items-center justify-center space-x-1">
         {`©${currentYear.getFullYear()}`} Jose Lopez<a href="/" className="hover:underline"></a>
         </div>
-        <div className="flex flex-row items-center justify-center space-x-2 mb-1">
+        <div className="flex flex-row items-center justify-center space-x-2 mb-1 mr-12">
           <a
             href="https://github.com/joselopezgr"
             rel="noreferrer"
@@ -24,7 +24,7 @@ const Footer = () => {
           >
             <AiOutlineGithub
               className="hover:-translate-y-1 transition-transform cursor-pointer"
-              size={30}
+              size={40}
             />
           </a>
 
@@ -35,7 +35,7 @@ const Footer = () => {
           >
             <AiOutlineLinkedin
               className="hover:-translate-y-1 transition-transform cursor-pointer"
-              size={30}
+              size={40}
             />
           </a>
 
@@ -46,7 +46,7 @@ const Footer = () => {
           >
             <AiOutlineInstagram
               className="hover:-translate-y-1 transition-transform cursor-pointer"
-              size={30}
+              size={40}
             />
           </a>
         </div>

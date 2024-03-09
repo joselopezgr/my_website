@@ -52,7 +52,6 @@ export default function RootLayout({
             >
               <ThemeProvider enableSystem={true} attribute="class">
                 {children}
-                <Footer />
               </ThemeProvider>
             </motion.div>
           )}

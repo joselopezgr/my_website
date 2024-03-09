@@ -71,14 +71,14 @@
 
 /* styles.css */
 .root-body { 
-    background-image: linear-gradient(180deg, #FFE5D4 3%, #f9c09b 70%);
+    background-image: linear-gradient(180deg, #FFE5D4 3%, #f9c09b 90%);
     border: 1px solid #FFFFFF;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
 main { 
-    background-image: linear-gradient(180deg, #FFE5D4 3%, #f9c09b 70%);
+    background-image: linear-gradient(180deg, #FFE5D4 3%, #f9c09b 90%);
     background-repeat: no-repeat; /* Prevent the background from repeating */
     min-height: 100vh; /* Ensure it takes at least full viewport height */
 }
@@ -126,6 +126,14 @@ main {
         color: #363636 ;
 }
 
+#extra-text{
+    color: #759aab;
+    font-family: 'syne', sans-serif;
+    padding-top: 10px;
+    font-weight: 600;
+    font-style: italic;
+}
+
 .tech-buttons {
     background-color: #f7fafc; /* bg-gray-200 */
     transition-duration: 0.3s; /* ease-in */
@@ -136,7 +144,7 @@ main {
     padding-bottom: 0.5rem; /* py-2 */
     margin-right: 0.5rem; /* mr-2 */
     margin-top: 0.5rem; /* mt-2 */
-    color: #718096; /* text-gray-500 */
+    color: #a24f3e; /* text-gray-500 */
     border-radius: 0.375rem; /* rounded */
     font-weight: 600; /* font-semibold */
     display: flex; /* flex */
@@ -156,7 +164,7 @@ main {
 }
 
 .project-container  {
-    background-color: rgba(214, 155, 83, 0.22);
+    background-color: rgba(214, 104, 83, 0.10);
     border-radius: 5px;
     color: #363636 ;
 }
@@ -193,45 +201,11 @@ main {
 }
 
 footer {
-    color: #2d3748;
+    color: #f8ebe3;
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-family: 'hiragino', sans-serif;
-    border-top: 3px solid #ffe5d4; /* Add border style and width */
+    border-top: 3px solid #FFE5D4; /* Add border style and width */
     border-radius: 0.375rem; /* Add border radius */
 }
 
-.carousel .slide {
-    background: #f5f5f5; /* Light grey background for each slide */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow effect */
-  }
-  
-  .carousel .slide img {
-    border-radius: 10px; /* Rounded corners for images */
-  }
-  
-  .carousel .control-arrow:hover {
-    background: rgba(0, 0, 0, 0.2); /* Darker background when hovering over arrows */
-  }
-  
-  .carousel .thumbs-wrapper {
-    margin-top: 20px; /* Space between carousel and thumbnails */
-  }
-  
-  .carousel .thumb {
-    border: 2px solid #d66853; /* Border around thumbnails */
-  }
-  
-  .carousel .thumb.selected, .carousel .thumb:hover {
-    border: 2px solid #d66853; /* Border color when thumbnail is selected or on hover */
-  }
-
-.carousel .legend {
-    background: #759aab !important; 
-    color: #141414 !important; 
-    padding: 10px; 
-    border-radius: 5px; 
-    font-weight: bold; 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}

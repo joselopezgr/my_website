@@ -3,6 +3,7 @@
 import { FC } from "react";
 import { sendEmail } from "@/utils/sendEmail";
 import { useForm } from "react-hook-form";
+import { Fade } from "react-awesome-reveal";
 
 export type FormData = {
   name: string;
@@ -20,9 +21,11 @@ const ContactSection: FC = () => {
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6">
       <div className="my-12 pb-8 md:pt-16 md:pb-32">
-        <h1 className="text-left font-bold text-4xl pb-8">
-          &lt; Contact me <span style={{ color: "#d66853" }}>/</span>&gt;
-        </h1>
+        <Fade direction="up" delay={1900} triggerOnce>
+          <h1 className="text-left font-bold text-4xl pb-8">
+            &lt; Contact me <span style={{ color: "#d66853" }}>/</span>&gt;
+          </h1>
+        </Fade>
 
         <div className="contact-container flex justify-center items-center h-full mt-6 pt-8 pb-8">
           <form onSubmit={handleSubmit(onSubmit)} className="max-w-md w-full">
