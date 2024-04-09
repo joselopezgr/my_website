@@ -10,6 +10,12 @@ const config: Config = {
     extend: {
       fontFamily: {
         syne: ["Syne", "san-serif"],
+        abel: ["Abel", "san-serif"],
+        "cabin-semi": ["Cabin", "sans-serif"],
+      },
+      fontSize: {
+        "12xl": "12rem",
+        "18xl": "18rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -19,7 +25,7 @@ const config: Config = {
       animation: {
         bounce:
           "bounce 0.5s alternate cubic-bezier(0.95, 0.05, 0.795, 0.035) infinite",
-          slideUpCubiBezier: "slideUp 1s cubic-bezier(0.165, 0.84, 0.44, 1)"
+        slideUpCubiBezier: "slideUp 1s cubic-bezier(0.165, 0.84, 0.44, 1)",
       },
       keyframes: {
         bounce: {

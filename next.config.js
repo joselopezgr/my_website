@@ -1,8 +1,14 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const { hostname } = require('os');
+const withVideos = require('next-videos');
 
-module.exports = nextConfig
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                hostname: "picsum.photos",
+            }
+        ]
+    }
+};
 
-const withVideos = require('next-videos')
-
-module.exports = withVideos()
+module.exports = withVideos(nextConfig);

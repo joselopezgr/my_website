@@ -23,7 +23,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
       targets: ".line-drawing-svg path",
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: "easeInOutQuad",
-      duration: 4000,
+      duration: 2500,
     });
 
     // SVG line drawing animation for the text
@@ -31,7 +31,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
       targets: ".line-drawing-svg text",
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: "easeInOutQuad",
-      duration: 4000,
+      duration: 2500,
       offset: "-=2000", // Start after the path animation
     });
   };
@@ -44,25 +44,9 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
 
   return (
     <div
-      className="relative h-screen flex items-center justify-center"
+      className="relative h-screen flex items-center justify-center bg-slate-500"
       data-is-mounted={isMounted}
     >
-      <video
-        autoPlay
-        loop
-        muted
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: -1, // Place the video behind other content
-          filter: "blur(10px)"
-        }}
-      >
-        <source src="/universe.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       <svg
         className="line-drawing-svg"
         xmlns="http://www.w3.org/2000/svg"
@@ -87,6 +71,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
           alignmentBaseline="middle"
           fill="#d7e2f3"
           fontSize="16"
+          className="font-bold text-gray-300"
         >
           Welcome
         </text>
