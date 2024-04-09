@@ -11,7 +11,6 @@ const Footer = () => {
   const currentYear = new Date;
   return (
     <footer className="mx-auto max-w-8xl px-4 sm:px-6 md:px-6 lg:px-8 xl:px-10">
-      <hr className="w-full h-0.5 mx-auto mt-8 border-0"></hr>
       <div className="mx-auto  p-4 flex flex-col text-center md:flex-row md:justify-between">
         <div className="flex flex-row items-center justify-center space-x-1">
         {`©${currentYear.getFullYear()}`} Jose Lopez<a href="/" className="hover:underline"></a>

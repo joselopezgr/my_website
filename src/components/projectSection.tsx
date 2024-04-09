@@ -16,15 +16,12 @@ const ProjectSection = () => {
 
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6">
-      <Fade direction="up" delay={1900} triggerOnce>
-        <h1 className="text-left font-bold text-4xl pb-8">
-          &lt; Projects <span style={{ color: "#d66853" }}>/</span>&gt;
-        </h1>
-      </Fade>
+      <div className="my-12 pb-16 md:my-16 md:pb-20 lg:my-20 lg:pb-24 xl:my-24 xl:pb-28">
       <div className="project-container flex justify-center items-center h-full mt-6 pt-8 pb-8">
         <p className="font-bold text-gray-800 tracking-wider">
           WORK IN PROGRESS
         </p>
+      </div>
       </div>
     </section>
   );

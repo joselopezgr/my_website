@@ -6,7 +6,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles.css */
+
+@font-face {
+    font-family: 'hiragino';
+    src: url('/fonts/HiraginoSansGB-W6.ttf') format('truetype');
+}
+
+
+/* ============= HERO SECTION =============== */
+
+
 
 .my-name {
     font-size: 4rem; /* default size */
@@ -63,23 +72,20 @@
     }
 }
 
-@font-face {
-    font-family: 'hiragino';
-    src: url('/fonts/HiraginoSansGB-W6.ttf') format('truetype');
-}
+/* ============= ROOT AND MAIN PART =============== */
 
 
 /* styles.css */
 .root-body { 
-    background-image: linear-gradient(180deg, #FFE5D4 3%, #f9c09b 90%);
+    background-image: linear-gradient(180deg, #f8ebe3 3%, #f8ebe3 90%);
     border: 1px solid #FFFFFF;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
 main { 
-    background-image: linear-gradient(180deg, #FFE5D4 3%, #f9c09b 90%);
-    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-image: linear-gradient(180deg, #f8ebe3 3%, #f8ebe3 90%);
+    position: relative;
     min-height: 100vh; /* Ensure it takes at least full viewport height */
 }
 
@@ -93,41 +99,63 @@ main {
     flex: 4; /* take up 4/5 of the available space */
 }
 
-.first-button {
-    color: #f7fafc; /* text-neutral-100 */
-    font-weight: 600; /* font-semibold */
-    padding: 6px; /* px-6 */
-    padding-top: 3px; /* py-3 */
-    padding-bottom: 3px; /* py-3 */
-    background-color: #048a81; /* bg-teal-600 */
-    border-radius: 0.375rem; /* rounded-lg */
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow */
-    transition-property: transform; /* transition-transform */
-    transition-duration: 0.3s; /* ease-out */
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-out */
-}
 
-.first-button:hover {
-    transform: scale(0.95); /* hover:scale-95 */
-}    
 
-#about h1 {
+/* ==================== ABOUT SECTION =========================== */
+
+.titleStyle {
+    font-size: 4rem;
+    line-height: 1; 
+    font-weight: 400;
     color: #363636;
     font-family: 'hiragino', sans-serif;
+    width: 100%; 
+    overflow: hidden;
+    margin-top: 15rem; 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-#about hr {
-    background-color: #d66853;
+/* When the screen size is less than 768px, set the font size to 4rem */
+@media screen and (max-width: 767px) {
+    .titleStyle {
+        font-size: 3rem;
+    }
 }
+
+/* When the screen size is 768px or more, decrease the font size */
+@media screen and (min-width: 768px) {
+    .titleStyle {
+        font-size: 4rem;
+    }
+}
+
+/* When the screen size is 1024px or more, decrease the font size even more */
+@media screen and (min-width: 1024px) {
+    .titleStyle {
+        font-size: 5rem;
+    }
+}
+
+/* When the screen size is 1200px or more, decrease the font size even more */
+@media screen and (min-width: 1200px) {
+    .titleStyle {
+        font-size: 7rem;
+    }
+}
+
+
+
 
 .about-container { 
-        background-color: rgba(214, 104, 83, 0.10);
-        border-radius: 5px;
+        /* background-color: rgba(98, 131, 149, 0.28); */
+        border-radius: 15px;
+        border: 2px solid #38302e;
         color: #363636 ;
 }
 
 #extra-text{
-    color: #759aab;
+    color: #38302e;
     font-family: 'syne', sans-serif;
     padding-top: 10px;
     font-weight: 600;
@@ -144,7 +172,7 @@ main {
     padding-bottom: 0.5rem; /* py-2 */
     margin-right: 0.5rem; /* mr-2 */
     margin-top: 0.5rem; /* mt-2 */
-    color: #a24f3e; /* text-gray-500 */
+    color: #8b473a; /* text-gray-500 */
     border-radius: 0.375rem; /* rounded */
     font-weight: 600; /* font-semibold */
     display: flex; /* flex */
@@ -158,27 +186,49 @@ main {
     color: #2d3748; /* hover:text-gray-700 */
 }
 
+
+
+/* ==================== PROJECTS SECTION =========================== */
+
+
 #projects h1 {
     color: #363636;
-    font-family: 'hiragino', sans-serif;
+    font-family: "Courier New", monospace;
 }
 
 .project-container  {
-    background-color: rgba(214, 104, 83, 0.10);
-    border-radius: 5px;
+    /* background-color: rgba(98, 131, 149, 0.28); */
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    border: 2px solid #38302e;
+    border-radius: 15px;
     color: #363636 ;
 }
+
+
+
+/* ==================== CONTACT SECTION =========================== */
+
 
 #contact h1 {
     color: #363636;
-    font-family: 'hiragino', sans-serif;
+    font-family: "Courier New", monospace;
 }
 
 .contact-container {
-    background-color: rgba(214, 104, 83, 0.10);
-    border-radius: 5px;
+    /* background-color: rgba(98, 131, 149, 0.28); */
+    border: 2px solid #38302e;
+    border-radius: 15px;
     color: #363636 ;
     font-family: 'syne', sans-serif;
+}
+
+ input {
+    background-color: #f7fafc;
+}
+
+textarea {
+    background-color: #f7fafc;
 }
 
 .contact-button:hover {
@@ -197,15 +247,17 @@ main {
     background-color: #759aab;
     color: #363636;
     outline: none;
-    
 }
 
+
+/* ==================== FOOTER SECTION =========================== */
+
+
 footer {
-    color: #f8ebe3;
+    color: #363636;
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-family: 'hiragino', sans-serif;
-    border-top: 3px solid #FFE5D4; /* Add border style and width */
-    border-radius: 0.375rem; /* Add border radius */
+    border-top: 3px solid #363636; /* Add border style and width */
 }
 
